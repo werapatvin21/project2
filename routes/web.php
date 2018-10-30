@@ -10,10 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//register form
 Route::get('/Register','RegisterController@index');
 Route::post('create', 'RegisterController@create');
-Route::view('Login','Login');
+
+//login form
+Route::get('/Login','LoginController@index');
+
 Route::view('ForgotPassword','ForgotPassword');
+
+//home page
 Route::view('Home','Home');
 
 Route::get('/', function () {

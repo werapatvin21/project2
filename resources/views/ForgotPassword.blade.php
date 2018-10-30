@@ -40,6 +40,7 @@
                         </div>
                     </div>
                 </div>
+                {{ csrf_field() }}
                 <div class="col-md-3">
                     <div class="form-control-feedback">
                         <span class="text-danger align-middle">

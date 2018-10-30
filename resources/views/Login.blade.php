@@ -80,6 +80,7 @@
                     </div>
                 </div>
             </div>
+            {{ csrf_field() }}
             <div class="row" style="padding-top: 1rem">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
@@ -90,6 +91,6 @@
         </form>
     </div>
 
-    
+
 </body>
 </html>
