@@ -1,11 +1,11 @@
 <form action="/action_page.php">
   <div class="form-group">
-    <label for="Username">Username:</label>
-    <input type="Username" class="form-control" id="Username">
+    <label for="username">Username:</label>
+    <input type="text" class="form-control" id="username">
   </div>
   <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" id="password">
   </div>
   <div class="form-group form-check">
     <label class="form-check-label">

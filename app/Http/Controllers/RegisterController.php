@@ -57,7 +57,8 @@ class RegisterController extends Controller
         $user->password = input::get("password");
         $user->save();
 
-        return ("data form saved into database registers");
+        
+        return view('Home');
 
         
 
