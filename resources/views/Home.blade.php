@@ -36,9 +36,11 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/Register">SignUp</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Forgot Password</a>
+          <a class="dropdown-item" href="/ForgotPassword">Forgot Password</a>
         </div>
       </li>
+
+      <a class="btn btn-primary" href="/Login" role="button">Login</a>
       
     </ul>
     <form class="form-inline my-2 my-lg-0">

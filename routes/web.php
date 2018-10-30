@@ -13,6 +13,7 @@
 Route::get('/Register','RegisterController@index');
 Route::post('create', 'RegisterController@create');
 Route::view('Login','Login');
+Route::view('ForgotPassword','ForgotPassword');
 Route::view('Home','Home');
 
 Route::get('/', function () {
