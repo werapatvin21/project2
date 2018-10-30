@@ -10,8 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::view('Register','Register');
+Route::get('/Register','RegisterController@index');
+Route::post('create', 'RegisterController@create');
 Route::view('Login','Login');
+Route::view('Home','Home');
 
 Route::get('/', function () {
     return view('welcome');

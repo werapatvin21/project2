@@ -19,7 +19,8 @@
 </head>
 <body>
 <div class="container">
-    <form class="form-horizontal" role="form" method="POST" action="/register">
+    <form class="form-horizontal" role="form" method="POST" action="create"><!--เเก้-->
+        
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
@@ -29,6 +30,7 @@
         </div>
 
         <div class="row">
+
             <div class="col-md-3 field-label-responsive">
                 <label for="name">Name</label>
             </div>
@@ -72,13 +74,13 @@
         </div>
         <div class="row">
             <div class="col-md-3 field-label-responsive">
-                <label for="password">Phone Number</label>
+                <label for="phone_number">Phone Number</label>
             </div>
             <div class="col-md-6">
                 <div class="form-group has-danger">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-                        <input type="form" name="Phone Number" class="form-control" id="Phone Number"
+                        <input type="text" name="phone_number" class="form-control" id="phone_number"
                                placeholder="Phone Number" required>
                     </div>
                 </div>
@@ -88,7 +90,7 @@
 
         <div class="row">
             <div class="col-md-3 field-label-responsive">
-                <label for="password">Hotel Name</label>
+                <label for="hotel_name">Hotel Name</label>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
@@ -96,8 +98,8 @@
                         <div class="input-group-addon" style="width: 2.6rem">
                             <i class="fa fa-repeat"></i>
                         </div>
-                        <input type="Hotel Name" name="Hotel Name" class="form-control"
-                               id="Hotel Name" placeholder="Hotel Name" required>
+                        <input type="text" name="hotel_name" class="form-control"
+                               id="hotel_name" placeholder="Hotel Name" required>
                     </div>
                 </div>
             </div>
@@ -105,7 +107,7 @@
 
         <div class="row">
             <div class="col-md-3 field-label-responsive">
-                <label for="Number Of Roomsword">Number Of Rooms</label>
+                <label for="number_of_room">Number Of Rooms</label>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
@@ -113,8 +115,8 @@
                         <div class="input-group-addon" style="width: 2.6rem">
                             <i class="fa fa-repeat"></i>
                         </div>
-                        <input type="form" name=" Number Of Rooms" class="form-control"
-                               id="Number Of Rooms" placeholder="Number Of Rooms" required>
+                        <input type="text" name="number_of_room" class="form-control"
+                               id="number_of_room" placeholder="Number Of Rooms" required>
                     </div>
                 </div>
             </div>
@@ -122,7 +124,7 @@
 
         <div class="row">
             <div class="col-md-3 field-label-responsive">
-                <label for="Create Username">Create Username</label>
+                <label for="username">Create Username</label>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
@@ -130,8 +132,8 @@
                         <div class="input-group-addon" style="width: 2.6rem">
                             <i class="fa fa-repeat"></i>
                         </div>
-                        <input type="Username" name=" Create Username" class="form-control"
-                               id="Create Username" placeholder="Create Username" required>
+                        <input type="text" name="username" class="form-control"
+                               id="username" placeholder="Create Username" required>
                     </div>
                 </div>
             </div>
@@ -139,7 +141,7 @@
 
         <div class="row">
             <div class="col-md-3 field-label-responsive">
-                <label for="Create Password">Create Password</label>
+                <label for="password">Create Password</label>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
@@ -147,8 +149,8 @@
                         <div class="input-group-addon" style="width: 2.6rem">
                             <i class="fa fa-repeat"></i>
                         </div>
-                        <input type="password" name=" Create Password" class="form-control"
-                               id="Create Password" placeholder="Create Password" required>
+                        <input type="password" name="password" class="form-control"
+                               id="password" placeholder="Create Password" required>
                     </div>
                 </div>
             </div>
@@ -157,7 +159,8 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <button type="submit" class="btn btn-success"><i class="fa fa-user-plus"></i>Let's Manage</button>
+                {{ csrf_field() }}
+                <button type="submit" class="btn btn-success" href="/Home"><i class="fa fa-user-plus"></i>Let's Manage</button>
             </div>
         </div>
     </form>
