@@ -14,6 +14,23 @@ class LoginController extends Controller
         return view('Login');
     }
 
+    public function login(Request $request)
+    {
+    	//login function
 
-    
+    	$username = $request->input('username');
+    	$password = $request->input('password');
+
+    	$CheckLogin = DB::table(registers)->where(['username'=>$username , 'password'=>$password])->get();
+        if(count($CheckLogin) >0)
+        {
+            echo "Login Successful";
+        }
+        else
+        {
+            echo "Login Failed Wrong Username or Password";ิ
+        }
+    }
+
+
 }

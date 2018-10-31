@@ -16,7 +16,7 @@ Route::post('create', 'RegisterController@create');
 
 //login form
 Route::get('/Login','LoginController@index');
-
+Route::post('/Home','LoginController@login');
 Route::view('ForgotPassword','ForgotPassword');
 
 //home page
