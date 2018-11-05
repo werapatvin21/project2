@@ -58,7 +58,7 @@ class RegisterController extends Controller
         $user->save();
 
         
-        return view('Home');
+        return view('Login');
 
         
 

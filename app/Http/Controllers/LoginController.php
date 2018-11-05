@@ -28,7 +28,7 @@ class LoginController extends Controller
         }
         else
         {
-            echo "Login Failed Wrong Username or Password";ิ
+            echo "Login Failed Wrong Username or Password";
         }
     }
 

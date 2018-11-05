@@ -1,168 +1,186 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <!-- Standard Meta -->
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Site Properties -->
-    <title>Register</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-</head>
-<body>
-<div class="container">
-    <form class="form-horizontal" role="form" method="POST" action="create"><!--เเก้-->
-        
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <h2>Register To Hotel Cloud</h2>
-                <hr>
-            </div>
-        </div>
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
 
-        <div class="row">
+    <title>Manage Hotel in Cloud</title>
+  </head>
+  <body>
 
-            <div class="col-md-3 field-label-responsive">
-                <label for="name">Name</label>
+    <!--================ Nav Bar =================-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/Register">HotelCloud</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/Register">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Start
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" data-toggle="modal" data-target="#signUp">Sign Up</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" data-toggle="modal" data-target="#forgotPassword">Forgot Password</a>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-                        <input type="text" name="name" class="form-control" id="name"
-                               placeholder="John Doe" required autofocus>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-control-feedback">
-                        <span class="text-danger align-middle">
-                            <!-- Put name validation error messages here -->
-                        </span>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 field-label-responsive">
-                <label for="email">E-Mail Address</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-                        <input type="text" name="email" class="form-control" id="email"
-                               placeholder="you@example.com" required autofocus>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-control-feedback">
-                        <span class="text-danger align-middle">
-                            <!-- Put e-mail validation error messages here -->
-                        </span>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 field-label-responsive">
-                <label for="phone_number">Phone Number</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group has-danger">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-                        <input type="text" name="phone_number" class="form-control" id="phone_number"
-                               placeholder="Phone Number" required>
-                    </div>
-                </div>
+          </li>
+          
+        </ul>
+        <!-- Button to Open the "Login" Modal -->
+        <form class="form-inline my-2 my-lg-0">
+          <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#signIn">Sign In</button>
+        </form>
+      </div>
+    </nav>
+    <!--================ End Nav Bar =================-->
+
+    <!--================ Home Banner Area =================-->
+    <section>
+      <div class="container">
+      <div class="text-center"> 
+        <h1>HotelCloud</h1>
+        <h3>better management, better business</h3>
+        <p>“ Chilling out on the bed in your hotel room watching television, <br>while wearing your own pajamas, is sometimes the best part of a vacation. ” <br>- Laura Marano -</p>
+        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#signUp">Get Started</a>
+      </div>
+      </div>
+    </section>
+    <!--================ End Home Banner Area =================-->
+
+    <!-- The "Login" Modal -->
+    <div class="modal" id="signIn">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Sign In</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form action="/action_page.php">
+                  <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" placeholder="Your Username">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Your Password">
+                  </div>
+                  <div class="form-group form-check">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox"> Remember me
+                    </label>
+                  </div>
+                </form>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success">LOGIN</button>
+            </div>
+            
+          </div>
         </div>
+      </div>
 
-        <div class="row">
-            <div class="col-md-3 field-label-responsive">
-                <label for="hotel_name">Hotel Name</label>
+      <!-- The "Forgot Password" Modal -->
+    <div class="modal" id="forgotPassword">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Forgor Your Password?</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem">
-                            <i class="fa fa-repeat"></i>
-                        </div>
-                        <input type="text" name="hotel_name" class="form-control"
-                               id="hotel_name" placeholder="Hotel Name" required>
-                    </div>
-                </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form action="/action_page.php">
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                  </div>
+                </form>
             </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success">Send</button>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="row">
-            <div class="col-md-3 field-label-responsive">
-                <label for="number_of_room">Number Of Rooms</label>
+    <!-- The "Sign Up" Modal -->
+    <div class="modal" id="signUp">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Register to HotelCloud</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem">
-                            <i class="fa fa-repeat"></i>
-                        </div>
-                        <input type="text" name="number_of_room" class="form-control"
-                               id="number_of_room" placeholder="Number Of Rooms" required>
-                    </div>
-                </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form action="/create" role="form" method="POST">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="name" placeholder="Your Name"required>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="email" placeholder="Your Email"required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="phone_number" placeholder="Phone Number"required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="hotel_name" placeholder="Hotel Name"required
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="number_of_room" placeholder="Number of Rooms"required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="username" placeholder="Create Username"requiredrequired>
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="password" placeholder="Create Password" required>
+                  </div>
+                </form>
             </div>
+            
+            <!-- Modal footer -->
+            {{ csrf_field() }}
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success" href="/Register">Let's Manage</button>
+            </div>
+            
+          </div>
         </div>
+      </div>
 
-        <div class="row">
-            <div class="col-md-3 field-label-responsive">
-                <label for="username">Create Username</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem">
-                            <i class="fa fa-repeat"></i>
-                        </div>
-                        <input type="text" name="username" class="form-control"
-                               id="username" placeholder="Create Username" required>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
 
-        <div class="row">
-            <div class="col-md-3 field-label-responsive">
-                <label for="password">Create Password</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem">
-                            <i class="fa fa-repeat"></i>
-                        </div>
-                        <input type="password" name="password" class="form-control"
-                               id="password" placeholder="Create Password" required>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                {{ csrf_field() }}
-                <button type="submit" class="btn btn-success" href="/Home"><i class="fa fa-user-plus"></i>Let's Manage</button>
-            </div>
-        </div>
-    </form>
-</div>
-</body>
+</html> 

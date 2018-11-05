@@ -12,12 +12,15 @@
 */
 //register form
 Route::get('/Register','RegisterController@index');
-Route::post('create', 'RegisterController@create');
+Route::post('/Register', 'RegisterController@create');
 
 //login form
-Route::get('/Login','LoginController@index');
+Route::get('/Home','LoginController@index');
 Route::post('/Home','LoginController@login');
-Route::view('ForgotPassword','ForgotPassword');
+Route::view('/ForgotPassword','ForgotPassword');
+
+//staff
+Route::get('/StaffSetting','StaffSettingController@index');
 
 //home page
 Route::view('Home','Home');
