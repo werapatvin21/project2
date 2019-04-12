@@ -23,23 +23,10 @@
       </button>
     
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/Register">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Start
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" data-toggle="modal" data-target="#signUp">Sign Up</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" data-toggle="modal" data-target="#forgotPassword">Forgot Password</a>
-            </div>
-          </li>
-          
-        </ul>
-        <!-- Button to Open the "Login" Modal -->
+
+      <ul class="navbar-nav mr-auto"></ul>
+
+        <!-- Button to Open the "Sign In" Modal -->
         <form class="form-inline my-2 my-lg-0">
           <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#signIn">Sign In</button>
         </form>
@@ -48,8 +35,12 @@
     <!--================ End Nav Bar =================-->
 
     <!--================ Home Banner Area =================-->
+    <div class="wrapper">
+        <div class="message">
+
     <section>
       <div class="container">
+      
       <div class="text-center"> 
         <h1>HotelCloud</h1>
         <h3>better management, better business</h3>
@@ -58,123 +49,135 @@
       </div>
       </div>
     </section>
+
+    </div>
+  </div>
     <!--================ End Home Banner Area =================-->
 
-    <!-- The "Login" Modal -->
+    <!--================ The "Sign In" Modal =================-->
     <div class="modal" id="signIn">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
           
-            <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">Sign In</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             
-            <!-- Modal body -->
             <div class="modal-body">
-                <form action="/action_page.php">
+                <form action="/Dashboard"> <!-- action here -->
                   <div class="form-group">
                     <label for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" placeholder="Your Username">
+                    <input type="text" class="form-control" id="signIn_username" name="username" placeholder="Your Username">
                   </div>
                   <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" placeholder="Your Password">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="signIn_pwd" name="password" placeholder="Your Password">
                   </div>
                   <div class="form-group form-check">
                     <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox"> Remember me
+                      <input class="form-check-input" type="checkbox" id="signIn_remember"> Remember me<br><br>
+                      <a href="/ForgotPwd">Forgot password?</a>
                     </label>
                   </div>
-                </form>
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+
             </div>
             
-            <!-- Modal footer -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-success">LOGIN</button>
+              <button type="submit" name="login" value="login" class="btn btn-success">LOGIN</button>
             </div>
-            
+
+            </form>
           </div>
         </div>
-      </div>
+    </div>
+    
+    <!--================ End The "Sign In" Modal =================-->
 
-      <!-- The "Forgot Password" Modal -->
-    <div class="modal" id="forgotPassword">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-          
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Forgor Your Password?</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            
-            <!-- Modal body -->
-            <div class="modal-body">
-                <form action="/action_page.php">
-                  <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                  </div>
-                </form>
-            </div>
-            
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-success">Send</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- The "Sign Up" Modal -->
+    <!--================ The "Sign Up" Modal =================-->
     <div class="modal" id="signUp">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
           
-            <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">Register to HotelCloud</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             
-            <!-- Modal body -->
             <div class="modal-body">
-                <form action="/create" role="form" method="POST">
+                <form action="/Register" method="POST">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="name" placeholder="Your Name"required>
+                    <input type="text" class="form-control" id="owner_name" name="name" placeholder="Your Name">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder="Your Email"required>
+                    <input type="email" class="form-control" id="owner_email" name="email" placeholder="Your Email">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="phone_number" placeholder="Phone Number"required>
+                    <input type="number" class="form-control" id="owner_tel" name="phone_number" placeholder="Phone Number">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="hotel_name" placeholder="Hotel Name"required
+                    <input type="text" class="form-control" id="owner_hName" name="hotel_name" placeholder="Hotel Name">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="number_of_room" placeholder="Number of Rooms"required>
+                    <input type="number" class="form-control" id="owner_rooms" name="number_of_room" placeholder="Number of Rooms">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="username" placeholder="Create Username"requiredrequired>
+                    <input type="text" class="form-control" id="owner_uName" name="username" placeholder="Create Username">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control" id="password" placeholder="Create Password" required>
+                    <input type="password" class="form-control" id="owner_pwd" name="password" placeholder="Create Password">
                   </div>
-                </form>
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             </div>
-            
-            <!-- Modal footer -->
-            {{ csrf_field() }}
+           
             <div class="modal-footer">
-              <button type="submit" class="btn btn-success" href="/Register">Let's Manage</button>
+              <button type="submit"  class="btn btn-success">Let's Manage</button>
             </div>
-            
+            </form>
           </div>
         </div>
       </div>
+    <!--================ End The "Sign Up" Modal =================-->
+
+<style>
+html, body{
+  height: 100%;
+}
+body { 
+      background-image: url(img/home.jpg) ;
+      background-position: center center;
+      background-repeat:  no-repeat;
+      background-attachment: fixed;
+      background-size:  cover;
+      background-color: #999;
+}
+
+div, body{
+  margin: 0;
+  padding: 0;
+  font-family: exo, sans-serif;
+  
+}
+.wrapper {
+  height: 100%; 
+  width: 100%; 
+}
+
+.message {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%; 
+  height:45%;
+  bottom: 0; 
+  display: block;
+  position: absolute;
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 0.5em;
+}
+</style>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -5,6 +5,14 @@ namespace App\Http\Controllers;
 use App\register;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
+use DB;
+use Auth;
+use App\User;
+use Hash;
+use App\Http\Controllers\Redirect;
+use Session;
+use Validator;
+use View;
 
 class RegisterController extends Controller
 {
@@ -15,7 +23,8 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('Register');
+        
+        return view('/Register');
     }
 
     /**
@@ -26,7 +35,18 @@ class RegisterController extends Controller
     public function create(Request $request)
     {
         //register function
+        $user = new register;
+        $user->name = input::get("name");
+        $user->email = input::get("email");
+        $user->phone_number = input::get("phone_number");
+        $user->hotel_name = input::get("hotel_name");
+        $user->number_of_room = input::get("number_of_room");
+        $user->username = input::get("username");
+        $user->password = input::get("password");
+        $user->save();
+
         
+        return view('/Register');
 
         /*$name = $request->input('name');
         $email = $request->input('email');
@@ -47,18 +67,7 @@ class RegisterController extends Controller
 
         //DB::table('registers')->insert()
 //);
-        $user = new register;
-        $user->name = input::get("name");
-        $user->email = input::get("email");
-        $user->phone_number = input::get("phone_number");
-        $user->hotel_name = input::get("hotel_name");
-        $user->number_of_room = input::get("number_of_room");
-        $user->username = input::get("username");
-        $user->password = input::get("password");
-        $user->save();
-
         
-        return view('Login');
 
         
 
@@ -72,7 +81,7 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -119,4 +128,26 @@ class RegisterController extends Controller
     {
         //
     }
+
+    public function login(Request $request){
+
+        /*$validate_user = DB::table('registers')->select('*')->where(['username' , input::get('username')],['password',input::get('password') ])->get();*/
+
+        //dd($validate_user);
+        
+        /*$user = DB::table('registers')->where('username',$username)->first(['username','password','id']);
+        
+        
+        if($username==$user->username && $password==$user->password){
+            return Redirect('/Dashboard',$username);
+        }
+        else{
+            die("Incorrect Username or Password");
+            return view('/Register');
+        }*/
+
+    }
+        
+
+
 }

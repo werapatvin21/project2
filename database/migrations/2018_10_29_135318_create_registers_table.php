@@ -22,7 +22,7 @@ class CreateRegistersTable extends Migration
             $table->integer('number_of_room');
             $table->string('username');
             $table->string('password');
-            
+            $table->rememberToken();
             $table->timestamps();
         });
     }

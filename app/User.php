@@ -27,4 +27,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /*public static $login_validation_rules = [
+        'username' => 'required|username|exists:users',
+        'password' => 'required'
+    ];*/
+
 }
